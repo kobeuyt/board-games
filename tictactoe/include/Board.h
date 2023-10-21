@@ -1,3 +1,5 @@
+#pragma once
+
 #include <array>
 #include <map>
 #include <string>
@@ -6,7 +8,7 @@
 #ifndef BOARD_H_
 #define BOARD_H_
 
-namespace games
+namespace TicTacToe
 {
     enum class Position
     {
@@ -70,6 +72,7 @@ namespace games
             std::vector<Position> GetValidMoves();
             Player CheckWinner();
             void PrintBoard();
+            void ClearBoard();
         private:
             std::map<Position, Player> *board;
     };

@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <string>
 
-namespace games
+namespace TicTacToe
 {
     Board::Board()
     {
@@ -16,6 +16,14 @@ namespace games
     Board::~Board()
     {
         delete board;
+    }
+
+    void Board::ClearBoard()
+    {
+        for (Position p : POS_ARR)
+        {
+            board->at(p) = Player::EMPTY;
+        }
     }
 
     void Board::Move(Position p, Player pl)
